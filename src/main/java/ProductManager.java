@@ -45,9 +45,9 @@ public class ProductManager {
         if (!product.getFrom().equals(from)) {
             return false;
         }
-            if (!product.getTo().equals(to)) {
-                return false;
-            }
-return true;
+        if (!product.getTo().equals(to)) {
+            return false;
+        }
+        return true;
     }
 }

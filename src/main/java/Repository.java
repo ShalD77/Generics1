@@ -22,21 +22,21 @@ public class Repository {
     }
 
     public void remove(int removeId) {
-        if (findByid(removeId)==null){
+        if (findByid(removeId) == null) {
             try {
-                throw new NotFoundException  (removeId);
+                throw new NotFoundException(removeId);
             } catch (NotFoundException e) {
                 throw new RuntimeException(e);
             }
         }
 
-    Ticket[] tmp = new Ticket[tickets.length - 1];
+        Ticket[] tmp = new Ticket[tickets.length - 1];
 
 
         int indexTo = 0;
-        for (Ticket ticket : tickets){
+        for (Ticket ticket : tickets) {
 
-            if (ticket.getId() !=removeId){
+            if (ticket.getId() != removeId) {
                 tmp[indexTo] = ticket;
                 indexTo++;
             }
@@ -44,10 +44,11 @@ public class Repository {
         tickets = tmp;
 
     }
-    public Ticket findByid(int id){
 
-        for (Ticket ticket : tickets){
-            if (ticket.getId()==id){
+    public Ticket findByid(int id) {
+
+        for (Ticket ticket : tickets) {
+            if (ticket.getId() == id) {
                 return ticket;
             }
         }
